@@ -87,6 +87,7 @@
             // 
             // measureButton
             // 
+            this.measureButton.Enabled = false;
             this.measureButton.Location = new System.Drawing.Point(277, 118);
             this.measureButton.Name = "measureButton";
             this.measureButton.Size = new System.Drawing.Size(180, 68);
