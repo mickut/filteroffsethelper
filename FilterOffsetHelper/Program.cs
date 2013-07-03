@@ -6,9 +6,6 @@
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
-    using ASCOM.Utilities;
-    using ASCOM.DriverAccess;
-    using FocusMax;
 
     class Program
     {
