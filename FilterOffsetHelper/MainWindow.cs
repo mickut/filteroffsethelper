@@ -7,9 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ASCOM.Utilities;
-using ASCOM.DriverAccess;
-using FocusMax;
+
 
 namespace FilterOffsetHelper
 {
