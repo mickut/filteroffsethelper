@@ -71,7 +71,7 @@
             // 
             this.focusmaxConnectButton.Location = new System.Drawing.Point(277, 12);
             this.focusmaxConnectButton.Name = "focusmaxConnectButton";
-            this.focusmaxConnectButton.Size = new System.Drawing.Size(185, 47);
+            this.focusmaxConnectButton.Size = new System.Drawing.Size(180, 47);
             this.focusmaxConnectButton.TabIndex = 3;
             this.focusmaxConnectButton.Text = "Connect to FocusMax";
             this.focusmaxConnectButton.UseVisualStyleBackColor = true;
@@ -80,7 +80,7 @@
             // 
             this.filterwheelConnectButton.Location = new System.Drawing.Point(277, 65);
             this.filterwheelConnectButton.Name = "filterwheelConnectButton";
-            this.filterwheelConnectButton.Size = new System.Drawing.Size(185, 47);
+            this.filterwheelConnectButton.Size = new System.Drawing.Size(180, 47);
             this.filterwheelConnectButton.TabIndex = 4;
             this.filterwheelConnectButton.Text = "Connect to filterwheel";
             this.filterwheelConnectButton.UseVisualStyleBackColor = true;
@@ -89,7 +89,7 @@
             // 
             this.measureButton.Location = new System.Drawing.Point(277, 118);
             this.measureButton.Name = "measureButton";
-            this.measureButton.Size = new System.Drawing.Size(185, 68);
+            this.measureButton.Size = new System.Drawing.Size(180, 68);
             this.measureButton.TabIndex = 5;
             this.measureButton.Text = "Measure!";
             this.measureButton.UseVisualStyleBackColor = true;
@@ -98,7 +98,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(474, 209);
+            this.ClientSize = new System.Drawing.Size(469, 209);
             this.Controls.Add(this.measureButton);
             this.Controls.Add(this.filterwheelConnectButton);
             this.Controls.Add(this.focusmaxConnectButton);
