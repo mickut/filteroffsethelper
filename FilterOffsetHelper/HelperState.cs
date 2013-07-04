@@ -82,5 +82,20 @@ namespace FilterOffsetHelper
                 return null;
             }
         }
+
+        public void setCurrentFilter(int filterIndex)
+        {
+            if (_filterwheelConnected)
+            {
+                try
+                {
+                    filterWheel.Position = (short)filterIndex;
+                }
+                catch (ASCOM.InvalidValueException e)
+                {
+                    return;
+                }
+            }
+        }
     }
 }
