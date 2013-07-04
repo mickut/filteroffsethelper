@@ -78,7 +78,12 @@ namespace FilterOffsetHelper
 
         private void measureButton_Click(object sender, EventArgs e)
         {
-
+            if (referenceComboBox.SelectedIndex == -1)
+            {
+                // Nothing selected as reference
+                MessageBox.Show("Please select a reference filter!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                return;
+            }
         }
     }
 }
