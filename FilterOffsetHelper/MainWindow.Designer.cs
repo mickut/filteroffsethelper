@@ -41,9 +41,11 @@
             // 
             // referenceComboBox
             // 
+            this.referenceComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.referenceComboBox.Enabled = false;
             this.referenceComboBox.FormattingEnabled = true;
             this.referenceComboBox.Location = new System.Drawing.Point(101, 12);
+            this.referenceComboBox.MaxDropDownItems = 20;
             this.referenceComboBox.Name = "referenceComboBox";
             this.referenceComboBox.Size = new System.Drawing.Size(166, 21);
             this.referenceComboBox.TabIndex = 0;
