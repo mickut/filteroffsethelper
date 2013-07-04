@@ -30,9 +30,15 @@ namespace FilterOffsetHelper
             {
                 helperState.focusmaxConnect();
                 focusmaxConnectButton.Text = "Disconnect FocusMax";
+
+                if (helperState.filterwheelConnected)
+                {
+                    measureButton.Enabled = true;
+                }
             }
             else
             {
+                measureButton.Enabled = false;
                 helperState.focusmaxDisconnect();
                 focusmaxConnectButton.Text = "Connect to FocusMax";
             }
@@ -52,9 +58,15 @@ namespace FilterOffsetHelper
                     filterListBox.Items.AddRange(filters);
                     referenceComboBox.Items.AddRange(filters);
                 }
+
+                if (helperState.focusmaxConnected)
+                {
+                    measureButton.Enabled = true;
+                }
             }
             else
             {
+                measureButton.Enabled = false;
                 helperState.filterwheelDisconnect();
                 filterListBox.Items.Clear();
                 referenceComboBox.Items.Clear();
