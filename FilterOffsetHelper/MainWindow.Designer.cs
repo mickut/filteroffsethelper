@@ -49,6 +49,7 @@
             this.referenceComboBox.Name = "referenceComboBox";
             this.referenceComboBox.Size = new System.Drawing.Size(166, 21);
             this.referenceComboBox.TabIndex = 0;
+            this.referenceComboBox.SelectedIndexChanged += new System.EventHandler(this.referenceComboBox_SelectedIndexChanged);
             // 
             // ReferenceLabel
             // 

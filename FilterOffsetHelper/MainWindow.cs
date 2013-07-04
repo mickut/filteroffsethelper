@@ -85,5 +85,15 @@ namespace FilterOffsetHelper
                 return;
             }
         }
+
+        private void referenceComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ComboBox referenceBox = (ComboBox)sender;
+            int index = referenceBox.SelectedIndex;
+            string[] filters = helperState.getFilters();
+            filterListBox.Items.Clear();
+            filterListBox.Items.AddRange(filters);
+            filterListBox.Items.RemoveAt(index);
+        }
     }
 }
