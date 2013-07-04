@@ -44,6 +44,11 @@ namespace FilterOffsetHelper
             {
                 helperState.filterwheelConnect();
                 filterwheelConnectButton.Text = "Disconnect filterwheel";
+                filterListBox.Enabled = true;
+                foreach (string filter in helperState.getFilters())
+                {
+                    
+                }
             }
             else
             {

@@ -32,10 +32,10 @@
             this.referenceComboBox = new System.Windows.Forms.ComboBox();
             this.ReferenceLabel = new System.Windows.Forms.Label();
             this.filterWheelBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.filterListBox = new System.Windows.Forms.ListBox();
             this.focusmaxConnectButton = new System.Windows.Forms.Button();
             this.filterwheelConnectButton = new System.Windows.Forms.Button();
             this.measureButton = new System.Windows.Forms.Button();
+            this.filterListBox = new System.Windows.Forms.CheckedListBox();
             ((System.ComponentModel.ISupportInitialize)(this.filterWheelBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,16 +56,6 @@
             this.ReferenceLabel.Size = new System.Drawing.Size(82, 13);
             this.ReferenceLabel.TabIndex = 1;
             this.ReferenceLabel.Text = "Reference Filter";
-            // 
-            // filterListBox
-            // 
-            this.filterListBox.Enabled = false;
-            this.filterListBox.FormattingEnabled = true;
-            this.filterListBox.Location = new System.Drawing.Point(15, 39);
-            this.filterListBox.MultiColumn = true;
-            this.filterListBox.Name = "filterListBox";
-            this.filterListBox.Size = new System.Drawing.Size(256, 147);
-            this.filterListBox.TabIndex = 2;
             // 
             // focusmaxConnectButton
             // 
@@ -92,20 +82,29 @@
             this.measureButton.Enabled = false;
             this.measureButton.Location = new System.Drawing.Point(277, 118);
             this.measureButton.Name = "measureButton";
-            this.measureButton.Size = new System.Drawing.Size(180, 68);
+            this.measureButton.Size = new System.Drawing.Size(180, 75);
             this.measureButton.TabIndex = 5;
             this.measureButton.Text = "Measure!";
             this.measureButton.UseVisualStyleBackColor = true;
+            // 
+            // filterListBox
+            // 
+            this.filterListBox.Enabled = false;
+            this.filterListBox.FormattingEnabled = true;
+            this.filterListBox.Location = new System.Drawing.Point(15, 39);
+            this.filterListBox.Name = "filterListBox";
+            this.filterListBox.Size = new System.Drawing.Size(252, 154);
+            this.filterListBox.TabIndex = 6;
             // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(469, 209);
+            this.Controls.Add(this.filterListBox);
             this.Controls.Add(this.measureButton);
             this.Controls.Add(this.filterwheelConnectButton);
             this.Controls.Add(this.focusmaxConnectButton);
-            this.Controls.Add(this.filterListBox);
             this.Controls.Add(this.ReferenceLabel);
             this.Controls.Add(this.referenceComboBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -124,9 +123,9 @@
         private System.Windows.Forms.ComboBox referenceComboBox;
         private System.Windows.Forms.Label ReferenceLabel;
         private System.Windows.Forms.BindingSource filterWheelBindingSource;
-        private System.Windows.Forms.ListBox filterListBox;
         private System.Windows.Forms.Button focusmaxConnectButton;
         private System.Windows.Forms.Button filterwheelConnectButton;
         private System.Windows.Forms.Button measureButton;
+        private System.Windows.Forms.CheckedListBox filterListBox;
     }
 }
