@@ -75,6 +75,7 @@
             this.focusmaxConnectButton.TabIndex = 3;
             this.focusmaxConnectButton.Text = "Connect to FocusMax";
             this.focusmaxConnectButton.UseVisualStyleBackColor = true;
+            this.focusmaxConnectButton.Click += new System.EventHandler(this.focusmaxConnectButton_Click);
             // 
             // filterwheelConnectButton
             // 
@@ -84,6 +85,7 @@
             this.filterwheelConnectButton.TabIndex = 4;
             this.filterwheelConnectButton.Text = "Connect to filterwheel";
             this.filterwheelConnectButton.UseVisualStyleBackColor = true;
+            this.filterwheelConnectButton.Click += new System.EventHandler(this.filterwheelConnectButton_Click);
             // 
             // measureButton
             // 
