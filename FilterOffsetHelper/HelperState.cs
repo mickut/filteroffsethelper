@@ -49,6 +49,26 @@ namespace FilterOffsetHelper
             }
         }
 
+        public void focus()
+        {
+            if (_focusmaxConnected)
+            {
+                focusmaxControl.Focus();
+            }
+        }
+
+        public int getFocuserPosition()
+        {
+            if (_focusmaxConnected)
+            {
+                return focusmaxControl.Position;
+            }
+            else
+            {
+                return -1;
+            }
+        }
+
         public void filterwheelConnect()
         {
             if (!_filterwheelConnected)
