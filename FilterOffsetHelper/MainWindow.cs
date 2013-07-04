@@ -78,11 +78,34 @@ namespace FilterOffsetHelper
 
         private void measureButton_Click(object sender, EventArgs e)
         {
-            if (referenceComboBox.SelectedIndex == -1)
+            int referenceIndex = referenceComboBox.SelectedIndex;
+            if (referenceIndex == -1)
             {
                 // Nothing selected as reference
                 MessageBox.Show("Please select a reference filter!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 return;
+            }
+            if (filterListBox.CheckedItems.Count == 0)
+            {
+                MessageBox.Show("No measurable filters selected!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                return;
+            }
+
+            List<String> filters = helperState.getFilters().ToList();
+
+            foreach (string filter in filterListBox.CheckedItems)
+            {
+                // Main measurement loop
+                // TODO: Implement iterations
+                int targetIndex = filters.IndexOf(filter);
+                helperState.setCurrentFilter(referenceIndex);
+                helperState.focus();
+                int referencePosition = helperState.getFocuserPosition();
+                helperState.setCurrentFilter(targetIndex);
+                helperState.focus();
+                int targetPosition = helperState.getFocuserPosition();
+                int difference = referencePosition - targetPosition; // Is this the right way around?
+                // The difference data needs to be saved in a file
             }
         }
 
