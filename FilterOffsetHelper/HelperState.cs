@@ -93,6 +93,7 @@ namespace FilterOffsetHelper
                 }
                 catch (ASCOM.InvalidValueException e)
                 {
+                    System.Windows.Forms.MessageBox.Show("Invalid index passed to the filter wheel!", "Error", System.Windows.Forms.MessageBoxButtons.OK,System.Windows.Forms.MessageBoxIcon.Asterisk);
                     return;
                 }
             }
