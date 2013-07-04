@@ -55,6 +55,7 @@ namespace FilterOffsetHelper
             {
                 filterWheelProgId = FilterWheel.Choose(null);
                 filterWheel = new FilterWheel(filterWheelProgId);
+                filterWheel.Connected = true;
                 _filterwheelConnected = true;
             }
         }
@@ -63,6 +64,7 @@ namespace FilterOffsetHelper
         {
             if (_filterwheelConnected)
             {
+                filterWheel.Connected = false;
                 filterWheel.Dispose();
                 filterWheel = null;
                 _filterwheelConnected = false;
