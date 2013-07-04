@@ -75,5 +75,10 @@ namespace FilterOffsetHelper
                 filterwheelConnectButton.Text = "Connect to filterwheel";
             }
         }
+
+        private void measureButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
