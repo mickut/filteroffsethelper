@@ -68,5 +68,17 @@ namespace FilterOffsetHelper
                 _filterwheelConnected = false;
             }
         }
+
+        public string[] getFilters()
+        {
+            if (_filterwheelConnected)
+            {
+                return filterWheel.Names;
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }
