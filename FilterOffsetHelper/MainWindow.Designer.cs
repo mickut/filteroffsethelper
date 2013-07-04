@@ -89,6 +89,7 @@
             // 
             // filterListBox
             // 
+            this.filterListBox.CheckOnClick = true;
             this.filterListBox.Enabled = false;
             this.filterListBox.FormattingEnabled = true;
             this.filterListBox.Location = new System.Drawing.Point(15, 39);
