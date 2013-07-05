@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.referenceComboBox = new System.Windows.Forms.ComboBox();
             this.ReferenceLabel = new System.Windows.Forms.Label();
             this.focusmaxConnectButton = new System.Windows.Forms.Button();
             this.filterwheelConnectButton = new System.Windows.Forms.Button();
             this.measureButton = new System.Windows.Forms.Button();
             this.filterListBox = new System.Windows.Forms.CheckedListBox();
+            this.measureBackgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.SuspendLayout();
             // 
             // referenceComboBox
@@ -99,6 +99,12 @@
             this.filterListBox.Size = new System.Drawing.Size(252, 154);
             this.filterListBox.TabIndex = 6;
             // 
+            // measureBackgroundWorker
+            // 
+            this.measureBackgroundWorker.WorkerSupportsCancellation = true;
+            this.measureBackgroundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.measureBackgroundWorker_DoWork);
+            this.measureBackgroundWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.measureBackgroundWorker_RunWorkerCompleted);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -128,5 +134,6 @@
         private System.Windows.Forms.Button filterwheelConnectButton;
         private System.Windows.Forms.Button measureButton;
         private System.Windows.Forms.CheckedListBox filterListBox;
+        private System.ComponentModel.BackgroundWorker measureBackgroundWorker;
     }
 }

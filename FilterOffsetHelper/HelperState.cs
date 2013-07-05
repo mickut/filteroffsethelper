@@ -53,7 +53,27 @@ namespace FilterOffsetHelper
         {
             if (_focusmaxConnected)
             {
-                focusmaxControl.Focus();
+                focusmaxControl.FocusAsync();
+            }
+        }
+
+        public int getFocuserStatus()
+        {
+            if (_focusmaxConnected)
+            {
+                return (int)focusmaxControl.FocusAsyncStatus;
+            }
+            else
+            {
+                return -2;
+            }
+        }
+
+        public void haltFocuser()
+        {
+            if (_focusmaxConnected)
+            {
+                focusmaxControl.Halt();
             }
         }
 
