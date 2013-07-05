@@ -107,6 +107,7 @@ namespace FilterOffsetHelper
             focusmaxConnectButton.Enabled = false;
             filterwheelConnectButton.Enabled = false;
             filterListBox.Enabled = false;
+            iterationNumeric.Enabled = false;
             measureButton.Text = "Stop measuring!";
 
             this.measuringInProgress = true;
@@ -134,36 +135,39 @@ namespace FilterOffsetHelper
             foreach (string filter in filterListBox.CheckedItems)
             {
                 // Main measurement loop
-                // TODO: Implement iterations
-                int targetIndex = filters.IndexOf(filter);
-                helperState.setCurrentFilter(referenceIndex);
-                helperState.focus();
-                System.Threading.Thread.Sleep(100);
-                while (helperState.getFocuserStatus() != 1)
+                int iterations = (int)iterationNumeric.Value;
+                for (int iteration = 0; iteration < iterations; iterations++)
                 {
-                    if (worker.CancellationPending || helperState.getFocuserStatus() == 0)
+                    int targetIndex = filters.IndexOf(filter);
+                    helperState.setCurrentFilter(referenceIndex);
+                    helperState.focus();
+                    System.Threading.Thread.Sleep(100);
+                    while (helperState.getFocuserStatus() != 1)
                     {
-                        helperState.haltFocuser();
-                        return;
+                        if (worker.CancellationPending || helperState.getFocuserStatus() == 0)
+                        {
+                            helperState.haltFocuser();
+                            return;
+                        }
+                        System.Threading.Thread.Sleep(500);
                     }
-                    System.Threading.Thread.Sleep(500);
-                }
-                int referencePosition = helperState.getFocuserPosition();
-                helperState.setCurrentFilter(targetIndex);
-                helperState.focus();
-                System.Threading.Thread.Sleep(100);
-                while (helperState.getFocuserStatus() != 1)
-                {
-                    if (worker.CancellationPending || helperState.getFocuserStatus() == 0)
+                    int referencePosition = helperState.getFocuserPosition();
+                    helperState.setCurrentFilter(targetIndex);
+                    helperState.focus();
+                    System.Threading.Thread.Sleep(100);
+                    while (helperState.getFocuserStatus() != 1)
                     {
-                        helperState.haltFocuser();
-                        return;
+                        if (worker.CancellationPending || helperState.getFocuserStatus() == 0)
+                        {
+                            helperState.haltFocuser();
+                            return;
+                        }
+                        System.Threading.Thread.Sleep(500);
                     }
-                    System.Threading.Thread.Sleep(500);
+                    int targetPosition = helperState.getFocuserPosition();
+                    int difference = referencePosition - targetPosition; // Is this the right way around?
+                    // The difference data needs to be saved in a file
                 }
-                int targetPosition = helperState.getFocuserPosition();
-                int difference = referencePosition - targetPosition; // Is this the right way around?
-                // The difference data needs to be saved in a file
             }
         }
 
@@ -173,6 +177,7 @@ namespace FilterOffsetHelper
             focusmaxConnectButton.Enabled = true;
             filterwheelConnectButton.Enabled = true;
             filterListBox.Enabled = true;
+            iterationNumeric.Enabled = true;
             measureButton.Text = "Measure!";
             this.measuringInProgress = false;
         }

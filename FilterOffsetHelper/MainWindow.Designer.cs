@@ -35,6 +35,9 @@
             this.measureButton = new System.Windows.Forms.Button();
             this.filterListBox = new System.Windows.Forms.CheckedListBox();
             this.measureBackgroundWorker = new System.ComponentModel.BackgroundWorker();
+            this.iterationLabel = new System.Windows.Forms.Label();
+            this.iterationNumeric = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.iterationNumeric)).BeginInit();
             this.SuspendLayout();
             // 
             // referenceComboBox
@@ -45,7 +48,7 @@
             this.referenceComboBox.Location = new System.Drawing.Point(101, 12);
             this.referenceComboBox.MaxDropDownItems = 20;
             this.referenceComboBox.Name = "referenceComboBox";
-            this.referenceComboBox.Size = new System.Drawing.Size(166, 21);
+            this.referenceComboBox.Size = new System.Drawing.Size(103, 21);
             this.referenceComboBox.TabIndex = 0;
             this.referenceComboBox.SelectedIndexChanged += new System.EventHandler(this.referenceComboBox_SelectedIndexChanged);
             // 
@@ -60,9 +63,9 @@
             // 
             // focusmaxConnectButton
             // 
-            this.focusmaxConnectButton.Location = new System.Drawing.Point(277, 12);
+            this.focusmaxConnectButton.Location = new System.Drawing.Point(210, 12);
             this.focusmaxConnectButton.Name = "focusmaxConnectButton";
-            this.focusmaxConnectButton.Size = new System.Drawing.Size(180, 47);
+            this.focusmaxConnectButton.Size = new System.Drawing.Size(182, 47);
             this.focusmaxConnectButton.TabIndex = 3;
             this.focusmaxConnectButton.Text = "Connect to FocusMax";
             this.focusmaxConnectButton.UseVisualStyleBackColor = true;
@@ -70,9 +73,9 @@
             // 
             // filterwheelConnectButton
             // 
-            this.filterwheelConnectButton.Location = new System.Drawing.Point(277, 65);
+            this.filterwheelConnectButton.Location = new System.Drawing.Point(210, 65);
             this.filterwheelConnectButton.Name = "filterwheelConnectButton";
-            this.filterwheelConnectButton.Size = new System.Drawing.Size(180, 47);
+            this.filterwheelConnectButton.Size = new System.Drawing.Size(182, 47);
             this.filterwheelConnectButton.TabIndex = 4;
             this.filterwheelConnectButton.Text = "Connect to filterwheel";
             this.filterwheelConnectButton.UseVisualStyleBackColor = true;
@@ -81,9 +84,9 @@
             // measureButton
             // 
             this.measureButton.Enabled = false;
-            this.measureButton.Location = new System.Drawing.Point(277, 118);
+            this.measureButton.Location = new System.Drawing.Point(210, 118);
             this.measureButton.Name = "measureButton";
-            this.measureButton.Size = new System.Drawing.Size(180, 75);
+            this.measureButton.Size = new System.Drawing.Size(182, 75);
             this.measureButton.TabIndex = 5;
             this.measureButton.Text = "Measure!";
             this.measureButton.UseVisualStyleBackColor = true;
@@ -94,9 +97,9 @@
             this.filterListBox.CheckOnClick = true;
             this.filterListBox.Enabled = false;
             this.filterListBox.FormattingEnabled = true;
-            this.filterListBox.Location = new System.Drawing.Point(15, 39);
+            this.filterListBox.Location = new System.Drawing.Point(15, 69);
             this.filterListBox.Name = "filterListBox";
-            this.filterListBox.Size = new System.Drawing.Size(252, 154);
+            this.filterListBox.Size = new System.Drawing.Size(189, 124);
             this.filterListBox.TabIndex = 6;
             // 
             // measureBackgroundWorker
@@ -105,11 +108,44 @@
             this.measureBackgroundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.measureBackgroundWorker_DoWork);
             this.measureBackgroundWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.measureBackgroundWorker_RunWorkerCompleted);
             // 
+            // iterationLabel
+            // 
+            this.iterationLabel.AutoSize = true;
+            this.iterationLabel.Location = new System.Drawing.Point(12, 46);
+            this.iterationLabel.Name = "iterationLabel";
+            this.iterationLabel.Size = new System.Drawing.Size(90, 13);
+            this.iterationLabel.TabIndex = 7;
+            this.iterationLabel.Text = "Iterations per filter";
+            // 
+            // iterationNumeric
+            // 
+            this.iterationNumeric.Location = new System.Drawing.Point(108, 43);
+            this.iterationNumeric.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.iterationNumeric.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.iterationNumeric.Name = "iterationNumeric";
+            this.iterationNumeric.Size = new System.Drawing.Size(96, 20);
+            this.iterationNumeric.TabIndex = 8;
+            this.iterationNumeric.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(469, 209);
+            this.ClientSize = new System.Drawing.Size(404, 209);
+            this.Controls.Add(this.iterationNumeric);
+            this.Controls.Add(this.iterationLabel);
             this.Controls.Add(this.filterListBox);
             this.Controls.Add(this.measureButton);
             this.Controls.Add(this.filterwheelConnectButton);
@@ -121,6 +157,7 @@
             this.Name = "MainWindow";
             this.Text = "Filter Offset Helper";
             this.Load += new System.EventHandler(this.MainWindow_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.iterationNumeric)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -135,5 +172,7 @@
         private System.Windows.Forms.Button measureButton;
         private System.Windows.Forms.CheckedListBox filterListBox;
         private System.ComponentModel.BackgroundWorker measureBackgroundWorker;
+        private System.Windows.Forms.Label iterationLabel;
+        private System.Windows.Forms.NumericUpDown iterationNumeric;
     }
 }
