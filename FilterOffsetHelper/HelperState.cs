@@ -51,6 +51,7 @@ namespace FilterOffsetHelper
 
         public void focus()
         {
+            /* Focus asynchronously using FocusMax. */
             if (_focusmaxConnected)
             {
                 focusmaxControl.FocusAsync();
@@ -59,6 +60,10 @@ namespace FilterOffsetHelper
 
         public int getFocuserStatus()
         {
+            /* 0 means operation failed,
+             * 1 means operation succeeded,
+             * -1 means operation is in progress
+             * and -2 means FocusMax is not connected. */
             if (_focusmaxConnected)
             {
                 return (int)focusmaxControl.FocusAsyncStatus;
