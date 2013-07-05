@@ -31,12 +31,10 @@
             this.components = new System.ComponentModel.Container();
             this.referenceComboBox = new System.Windows.Forms.ComboBox();
             this.ReferenceLabel = new System.Windows.Forms.Label();
-            this.filterWheelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.focusmaxConnectButton = new System.Windows.Forms.Button();
             this.filterwheelConnectButton = new System.Windows.Forms.Button();
             this.measureButton = new System.Windows.Forms.Button();
             this.filterListBox = new System.Windows.Forms.CheckedListBox();
-            ((System.ComponentModel.ISupportInitialize)(this.filterWheelBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // referenceComboBox
@@ -117,7 +115,6 @@
             this.Name = "MainWindow";
             this.Text = "Filter Offset Helper";
             this.Load += new System.EventHandler(this.MainWindow_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.filterWheelBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -127,7 +124,6 @@
 
         private System.Windows.Forms.ComboBox referenceComboBox;
         private System.Windows.Forms.Label ReferenceLabel;
-        private System.Windows.Forms.BindingSource filterWheelBindingSource;
         private System.Windows.Forms.Button focusmaxConnectButton;
         private System.Windows.Forms.Button filterwheelConnectButton;
         private System.Windows.Forms.Button measureButton;
