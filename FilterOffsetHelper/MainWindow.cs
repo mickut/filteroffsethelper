@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
 namespace FilterOffsetHelper
 {
     public partial class MainWindow : Form
@@ -132,6 +131,10 @@ namespace FilterOffsetHelper
             List<String> filters = helperState.getFilters().ToList();
             int iterations = (int)iterationNumeric.Value;
 
+            string filename = "filteroffsets_" + DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss") + ".txt";
+            MessageBox.Show(filename);
+            System.IO.StreamWriter file = new System.IO.StreamWriter(filename, false);
+            file.WriteLine("referenceFilter,targetFilter,referenceSteps,targetSteps,difference");
             foreach (string filter in filterListBox.CheckedItems)
             {
                 // Main measurement loop
@@ -146,6 +149,7 @@ namespace FilterOffsetHelper
                         if (worker.CancellationPending || helperState.getFocuserStatus() == 0)
                         {
                             helperState.haltFocuser();
+                            file.Close();
                             return;
                         }
                         System.Threading.Thread.Sleep(500);
@@ -159,15 +163,18 @@ namespace FilterOffsetHelper
                         if (worker.CancellationPending || helperState.getFocuserStatus() == 0)
                         {
                             helperState.haltFocuser();
+                            file.Close();
                             return;
                         }
                         System.Threading.Thread.Sleep(500);
                     }
                     int targetPosition = helperState.getFocuserPosition();
                     int difference = referencePosition - targetPosition; // Is this the right way around?
+                    file.WriteLine(referenceComboBox.SelectedItem.ToString() + "," + filter + "," + referencePosition + "," + targetPosition + "," + difference);
                     // The difference data needs to be saved in a file
                 }
             }
+            file.Close();
         }
 
         private void measureBackgroundWorker_RunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
