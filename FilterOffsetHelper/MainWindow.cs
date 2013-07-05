@@ -91,6 +91,10 @@ namespace FilterOffsetHelper
                 return;
             }
 
+            focusmaxConnectButton.Enabled = false;
+            filterwheelConnectButton.Enabled = false;
+            filterListBox.Enabled = false;
+
             List<String> filters = helperState.getFilters().ToList();
 
             foreach (string filter in filterListBox.CheckedItems)
@@ -107,6 +111,10 @@ namespace FilterOffsetHelper
                 int difference = referencePosition - targetPosition; // Is this the right way around?
                 // The difference data needs to be saved in a file
             }
+
+            focusmaxConnectButton.Enabled = true;
+            filterwheelConnectButton.Enabled = true;
+            filterListBox.Enabled = true;
         }
 
         private void referenceComboBox_SelectedIndexChanged(object sender, EventArgs e)
