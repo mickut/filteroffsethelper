@@ -132,7 +132,6 @@ namespace FilterOffsetHelper
             int iterations = (int)iterationNumeric.Value;
 
             string filename = "filteroffsets_" + DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss") + ".txt";
-            MessageBox.Show(filename);
             System.IO.StreamWriter file = new System.IO.StreamWriter(filename, false);
             file.WriteLine("referenceFilter,targetFilter,referenceSteps,targetSteps,difference");
             foreach (string filter in filterListBox.CheckedItems)
