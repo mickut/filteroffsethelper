@@ -130,14 +130,14 @@ namespace FilterOffsetHelper
             BackgroundWorker worker = sender as BackgroundWorker;
             int referenceIndex = referenceComboBox.SelectedIndex;
             List<String> filters = helperState.getFilters().ToList();
+            int iterations = (int)iterationNumeric.Value;
 
             foreach (string filter in filterListBox.CheckedItems)
             {
                 // Main measurement loop
-                int iterations = (int)iterationNumeric.Value;
-                for (int iteration = 0; iteration < iterations; iterations++)
+                int targetIndex = filters.IndexOf(filter);
+                for (int iteration = 0; iteration < iterations; iteration++)
                 {
-                    int targetIndex = filters.IndexOf(filter);
                     helperState.setCurrentFilter(referenceIndex);
                     helperState.focus();
                     System.Threading.Thread.Sleep(100);
